@@ -24,10 +24,7 @@ make_task_def() {
 	    "image": "792082350620.dkr.ecr.us-west-2.amazonaws.com/webapp-repository:%s",
 	    "essential": true,
 	    "memory": 200,
-	    "cpu": 10,
-	    "command": [
-	       "python app.py"
-	    ]
+	    "cpu": 10
 	}
     ]'
 
