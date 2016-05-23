@@ -1,0 +1,15 @@
+machine:
+  python:
+    version: 2.7.9
+  services:
+    - docker
+dependencies:
+  post:
+    - docker build --rm=false -t webapp .
+test:
+  return 0
+deployment:
+  prod:
+    branch: master
+    commands:
+      - ./deploy.sh
