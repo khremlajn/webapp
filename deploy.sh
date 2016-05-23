@@ -27,13 +27,6 @@ make_task_def() {
 	    "cpu": 10,
 	    "command": [
 	       "python app.py"
-	    ],
-	    "portMappings": [
-	    	{
-	       		"containerPort": 5000,
-	       		"hostPort": 80,
-	       		"protocol": "tcp",
-	    	}
 	    ]
 	}
     ]'
