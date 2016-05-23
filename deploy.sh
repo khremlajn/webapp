@@ -29,11 +29,12 @@ make_task_def() {
 	       "python app.py"
 	    ],
 	    "portMappings": [
-            {
-                "containerPort": 5000,
-                "hostPort": 80
-            }
-        ]
+	    {
+	       "containerPort": 5000,
+	       "hostPort": 80,
+	       "protocol": "tcp",
+	    }
+	    ],
 	}
     ]'
 
@@ -57,7 +58,7 @@ register_definition() {
 deploy_cluster() {
 
     host_port=80
-    family="webapp-cluster"
+    family="webapp-task-family"
 
     make_task_def
     register_definition
