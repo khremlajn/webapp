@@ -7,7 +7,8 @@ dependencies:
   post:
     - docker build --rm=false -t webapp .
 test:
-  exit 0
+  override:
+    - exit 0
 deployment:
   prod:
     branch: master
