@@ -29,11 +29,11 @@ make_task_def() {
 	       "python app.py"
 	    ],
 	    "portMappings": [
-	    {
-	       "containerPort": 5000,
-	       "hostPort": 80,
-	       "protocol": "tcp",
-	    }
+	    	{
+	       		"containerPort": 5000,
+	       		"hostPort": 80,
+	       		"protocol": "tcp",
+	    	}
 	    ]
 	}
     ]'
