@@ -24,8 +24,8 @@ make_task_def() {
 	    "image": "792082350620.dkr.ecr.us-west-2.amazonaws.com/webapp-repository:latest",
 	    "portMappings": [
 		{
-		    "containerPort": 80,
-		    "hostPort": 5000,
+		    "containerPort": 5000,
+		    "hostPort": 80,
 		    "protocol": "tcp"
 		}
 	    ],
