@@ -20,7 +20,7 @@ make_task_def() {
 
     task_template='[
 	{
-	    "name": "start",
+	    "name": "webapp-container",
 	    "image": "792082350620.dkr.ecr.us-west-2.amazonaws.com/webapp-repository:latest",
 	    "essential": true,
 	    "memory": 200,
