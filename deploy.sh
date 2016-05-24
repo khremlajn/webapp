@@ -21,14 +21,14 @@ make_task_def() {
     task_template='[
 	{
 	    "name": "start",
-	    "image": "792082350620.dkr.ecr.us-west-2.amazonaws.com/webapp-repository:%s",
+	    "image": "792082350620.dkr.ecr.us-west-2.amazonaws.com/webapp-repository:latest",
 	    "essential": true,
 	    "memory": 200,
 	    "cpu": 10
 	}
     ]'
 
-    task_def=$(printf "$task_template" $CIRCLE_SHA1 $host_port)
+    task_def=$(printf "$task_template")
 
 }
 
@@ -48,11 +48,11 @@ register_definition() {
 deploy_cluster() {
 
     host_port=80
-    family="webapp-task-family"
+    family="webapp-update"
 
     make_task_def
     register_definition
-    if [[ $(aws ecs update-service --cluster webapp-cluster --service webaspp-service2 --task-definition $revision | \
+    if [[ $(aws ecs update-service --cluster webapp-cluster --service webapp-service --task-definition $revision | \
                    $JQ '.service.taskDefinition') != $revision ]]; then
         echo "Error updating service."
         return 1
@@ -76,4 +76,4 @@ deploy_cluster() {
 }
 
 deploy_image
-#deploy_cluster
+deploy_cluster
