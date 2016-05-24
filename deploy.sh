@@ -22,6 +22,13 @@ make_task_def() {
 	{
 	    "name": "webapp-container",
 	    "image": "792082350620.dkr.ecr.us-west-2.amazonaws.com/webapp-repository:latest",
+	    "portMappings": [
+		{
+		    "containerPort": 80,
+		    "hostPort": 5000,
+		    "protocol": "tcp"
+		}
+	    ],
 	    "essential": true,
 	    "memory": 200,
 	    "cpu": 10
